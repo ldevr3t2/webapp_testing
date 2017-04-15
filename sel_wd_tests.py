@@ -40,9 +40,9 @@ class TestWebApp(unittest.TestCase):
 			
 		#test consistency
 		assert record_elem.is_enabled()	
-		assert pause_elem.is_enabled() == false
-		assert stop_elem.is_enabled() == false
-		assert search_elem.is_enabled() == false
+		assert pause_elem.is_enabled() == False
+		assert stop_elem.is_enabled() == False
+		assert search_elem.is_enabled() == False
 
 		#now we will click the record button and check if they are enabled
 		record_elem.click()
@@ -61,9 +61,9 @@ class TestWebApp(unittest.TestCase):
 		#now we will click the stop and reset button and check if they reset
 		pause_elem.click()
 		assert record_elem.is_enabled()	
-		assert pause_elem.is_enabled() == false
-		assert stop_elem.is_enabled() == false
-		assert search_elem.is_enabled()	== false
+		assert pause_elem.is_enabled() == False
+		assert stop_elem.is_enabled() == False
+		assert search_elem.is_enabled()	== False
 
 	#unittest for music recognition search functionality
 	def test_music_recognition_search(self):
