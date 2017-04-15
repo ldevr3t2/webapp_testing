@@ -13,3 +13,4 @@ Docker Container for Testing of the Web Application
 ## Tools and Tutorials Used ##
 * Selenium
 * ** [**Dockerizing Selenium Tutorial**](<https://medium.com/@griggheo/running-headless-selenium-webdriver-tests-in-docker-containers-342fdbabf756/>)
+* ** [**Selenium Dockerfiles**](<https://github.com/SeleniumHQ/docker-selenium/blob/master/NodeFirefox/Dockerfile/>)
