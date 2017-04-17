@@ -1,6 +1,8 @@
 import unittest
 from selenium import webdriver
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
@@ -36,7 +38,7 @@ class TestWebApp(unittest.TestCase):
 		time.sleep(2)
 
 		#find music button
-		record_elem = driver.find_element_by_xpath("//*[@id='record']")
+		record_elem = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//*[@id='record']")))
 		#find pause button
 		pause_elem = driver.find_element_by_xpath("//*[@id='pause']")
 		#find stop and reset button
