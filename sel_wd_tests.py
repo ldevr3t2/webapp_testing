@@ -32,6 +32,9 @@ class TestWebApp(unittest.TestCase):
 		content_elem = driver.find_element_by_xpath("//*[@id='recognitionSection']")
 		content_elem.click()
 
+		#wait for the elements to come in view
+		time.sleep(2)
+
 		#find music button
 		record_elem = driver.find_element_by_xpath("//*[@id='record']")
 		#find pause button
@@ -79,6 +82,9 @@ class TestWebApp(unittest.TestCase):
 		content_elem = driver.find_element_by_xpath("//*[@id='recognitionSection']")
 		content_elem.click()
 
+		#wait for the elements to come in view
+		time.sleep(2)		
+
 		#find music button
 		record_elem = driver.find_element_by_xpath("//*[@id='record']")
 		#find pause button
@@ -114,6 +120,9 @@ class TestWebApp(unittest.TestCase):
 		content_elem = driver.find_element_by_xpath("//*[@id='recommendationSection']")
 		content_elem.click()
 
+		#wait for the elements to come in view
+		time.sleep(2)		
+
 		#get artist
 		artist_elem = driver.find_element_by_xpath("//*[@id='artist-0']")
 		#get reset
@@ -135,6 +144,9 @@ class TestWebApp(unittest.TestCase):
 		#get to recommendation section
 		content_elem = driver.find_element_by_xpath("//*[@id='recommendationSection']")
 		content_elem.click()
+
+		#wait for the elements to come in view
+		time.sleep(2)		
 
 		#get artist
 		artist_elem = driver.find_element_by_xpath("//*[@id='artist-0']")
@@ -166,6 +178,9 @@ class TestWebApp(unittest.TestCase):
 		#get to recommendation section
 		content_elem = driver.find_element_by_xpath("//*[@id='recommendationSection']")
 		content_elem.click()
+
+		#wait for the elements to come in view
+		time.sleep(2)		
 
 		add_elem = driver.find_element_by_xpath("//*[@id='addArtist']")
 
