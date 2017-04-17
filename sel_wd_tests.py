@@ -5,6 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
+from selenium.webdriver.support import expected_conditions as EC
 import unittest, time, re, random
 
 class TestWebApp(unittest.TestCase):
@@ -17,6 +18,8 @@ class TestWebApp(unittest.TestCase):
 		profile.set_preference("http.response.timeout", 20)
 		profile.set_preference("dom.max_script_run_time", 20)
 		self.driver = webdriver.Firefox(firefox_profile=profile)
+		#resize the window
+		self.driver.set_window_size(1600, 900)
 
 	#unittest for music recognition button consistency
 	def test_music_recognition_buttons(self):
