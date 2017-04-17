@@ -193,15 +193,10 @@ class TestWebApp(unittest.TestCase):
 		driver.save_screenshot('screens/test_multiple_artists.png')
 
 		#click the element 5 times, make sure it is disabled
-		#we must move to the element every time to ensure clicking
 		add_elem.click()
-		ActionChains(driver).move_to_element(add_elem).perform()
 		add_elem.click()
-		ActionChains(driver).move_to_element(add_elem).perform()
 		add_elem.click()
-		ActionChains(driver).move_to_element(add_elem).perform()
 		add_elem.click()
-		ActionChains(driver).move_to_element(add_elem).perform()
 		add_elem.click()
 
 		assert not add_elem.is_enabled()
