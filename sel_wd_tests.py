@@ -34,9 +34,6 @@ class TestWebApp(unittest.TestCase):
 		content_elem = driver.find_element_by_xpath("//*[@id='recognitionSection']")
 		content_elem.click()
 
-		#wait for the elements to come in view
-		time.sleep(2)
-
 		#find music button
 		record_elem = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//*[@id='record']")))
 		#find pause button
@@ -82,13 +79,10 @@ class TestWebApp(unittest.TestCase):
 		self.assertIn("VT Musica", driver.title)
 		#get to recognition section
 		content_elem = driver.find_element_by_xpath("//*[@id='recognitionSection']")
-		content_elem.click()
-
-		#wait for the elements to come in view
-		time.sleep(2)		
+		content_elem.click()	
 
 		#find music button
-		record_elem = driver.find_element_by_xpath("//*[@id='record']")
+		record_elem = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//*[@id='record']")))
 		#find pause button
 		pause_elem = driver.find_element_by_xpath("//*[@id='pause']")
 		#find search button
@@ -190,10 +184,15 @@ class TestWebApp(unittest.TestCase):
 		assert add_elem.is_enabled()
 
 		#click the element 5 times, make sure it is disabled
+		#we must move to the element every time to ensure clicking
 		add_elem.click()
+		ActionChains(driver).move_to_element(add_elem).perform()
 		add_elem.click()
+		ActionChains(driver).move_to_element(add_elem).perform()
 		add_elem.click()
+		ActionChains(driver).move_to_element(add_elem).perform()
 		add_elem.click()
+		ActionChains(driver).move_to_element(add_elem).perform()
 		add_elem.click()
 
 		assert not add_elem.is_enabled()
