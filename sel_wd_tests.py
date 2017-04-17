@@ -21,7 +21,7 @@ class TestWebApp(unittest.TestCase):
 		profile.set_preference("dom.max_script_run_time", 20)
 		self.driver = webdriver.Firefox(firefox_profile=profile)
 		#resize the window
-		self.driver.set_window_size(1600, 900)
+		self.driver.maximize_window()
 
 	#unittest for music recognition button consistency
 	def test_music_recognition_buttons(self):
