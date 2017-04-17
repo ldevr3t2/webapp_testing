@@ -34,6 +34,9 @@ class TestWebApp(unittest.TestCase):
 		content_elem = driver.find_element_by_xpath("//*[@id='recognitionSection']")
 		content_elem.click()
 
+		#debug out by saving screenshot
+		driver.save_screenshot('test_music_recognition_buttons.png')
+
 		#find music button
 		record_elem = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//*[@id='record']")))
 		#find pause button
@@ -80,6 +83,9 @@ class TestWebApp(unittest.TestCase):
 		#get to recognition section
 		content_elem = driver.find_element_by_xpath("//*[@id='recognitionSection']")
 		content_elem.click()	
+
+		#debug out by saving screenshot
+		driver.save_screenshot('test_music_recognition_search.png')
 
 		#find music button
 		record_elem = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//*[@id='record']")))
@@ -182,6 +188,9 @@ class TestWebApp(unittest.TestCase):
 
 		#make sure that the add element is enabled
 		assert add_elem.is_enabled()
+
+		#debug out by saving screenshot
+		driver.save_screenshot('test_multiple_artists.png')
 
 		#click the element 5 times, make sure it is disabled
 		#we must move to the element every time to ensure clicking
