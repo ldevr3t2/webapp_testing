@@ -43,6 +43,8 @@ ADD xvfb.init /etc/init.d/xvfb
 RUN chmod +x /etc/init.d/xvfb
 RUN update-rc.d xvfb defaults
 
+RUN mkdir -p /root/selenium_wd_tests/screens
+
 # Following line fixes
 # https://github.com/SeleniumHQ/docker-selenium/issues/87
 RUN echo "DBUS_SESSION_BUS_ADDRESS=/dev/null" >> /etc/environment
