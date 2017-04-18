@@ -209,7 +209,7 @@ class TestWebApp(unittest.TestCase):
 		assert driver.find_element_by_xpath("//*[@id='artist-4']")
 
 	def tearDown(self):
-		self.driver.close()
+		self.driver.quit()
 
 if __name__ == "__main__":
     unittest.main()
