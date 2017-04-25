@@ -52,9 +52,13 @@ class TestWebApp(unittest.TestCase):
 		assert stop_elem.is_enabled() == False
 		assert search_elem.is_enabled() == False
 
+		#unfortunately, we can't test these features since a headless browser doesn't have a microphone.
+		#in order to do this we are spoofing a microphone on the test site.
 		#now we will click the record button and check if they are enabled
 		record_elem.click()
 		assert record_elem.is_enabled()	
+		#we need to wait for the pause element to enable
+		pause_elem = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='pause']")))
 		assert pause_elem.is_enabled()
 		assert stop_elem.is_enabled()
 		assert search_elem.is_enabled()
@@ -67,7 +71,7 @@ class TestWebApp(unittest.TestCase):
 		assert search_elem.is_enabled()		
 
 		#now we will click the stop and reset button and check if they reset
-		pause_elem.click()
+		stop_elem.click()
 		assert record_elem.is_enabled()	
 		assert pause_elem.is_enabled() == False
 		assert stop_elem.is_enabled() == False
@@ -87,6 +91,8 @@ class TestWebApp(unittest.TestCase):
 		#debug out by saving screenshot
 		driver.save_screenshot('screens/test_music_recognition_search.png')
 
+		#unfortunately, we can't test these features since a headless browser doesn't have a microphone.
+		#in order to do this we are spoofing a microphone on the test site.
 		#find music button
 		record_elem = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//*[@id='record']")))
 		#find pause button
@@ -102,6 +108,7 @@ class TestWebApp(unittest.TestCase):
 
 		#record and then send
 		record_elem.click()
+		pause_elem = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='pause']")))
 		pause_elem.click()
 		search_elem.click()
 
